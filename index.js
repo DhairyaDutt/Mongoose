@@ -18,4 +18,20 @@ const movieSchema = new mongoose.Schema({
 
 const Movie = mongoose.model('Movie', movieSchema);
 
-const suicideSquad = new Movie({title: 'Suicide Squad', year: 2021, score:9,rating:'R'})
+// const suicideSquad = new Movie({title: 'Suicide Squad', year: 2021, score:9,rating:'R'})
+
+Movie.insertMany([
+    {title: 'Shang Chi', year:2021, score:9.7, rating:'PG-13'},
+    {title: 'Free Guy', year:2021, score:9.3, rating:'PG-13'},
+    {title: 'Deadpool', year:2016, score:9.9, rating:'R'}
+    
+])
+
+.then(data =>{
+    console.log("It worked!!!");
+    console.log(data);
+})
+
+.catch((err) =>{
+    console.log("ERROR!!!");
+})
